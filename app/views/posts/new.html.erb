@@ -1,9 +1,10 @@
-<h1>Create a post:</h1>
-<%= simple_form_for(@post, html: {class: "form-vertical"}) do |form| %>
-  <%= form.input  :title %>
-  <%= form.input  :body %>
-  <%= form.button :submit %>
-<% end %>
+<div class="content">
+  <h1>Create a post:</h1>
+  <%= simple_form_for(@post, html: {class: "form-vertical"}) do |form| %>
+    <%= form.input  :title %>
+    <%= form.input  :body %>
+    <%= form.button :submit %>
+  <% end %>
 
-<small> <%= link_to "Cancel", root_path %></small>
-
+  <small> <%= link_to "Cancel", root_path %></small>
+</div>
