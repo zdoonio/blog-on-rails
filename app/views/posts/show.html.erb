@@ -1,2 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+<small> <%= link_to "Back", root_path %></small>
+<small> <%= link_to "Edit", edit_post_path(@post) %></small>
+<small> <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" } %></small>
