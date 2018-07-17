@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# Use devise
+gem 'devise'
 # Use simple forms
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 # Use TwitterBootstrap
