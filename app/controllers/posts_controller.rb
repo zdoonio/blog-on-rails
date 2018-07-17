@@ -17,8 +17,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      flash[:notice] = "Post created."
       redirect_to @post
     else
+      flash[:alert] = "There is some errors."
       render 'create'
     end
   end
@@ -30,8 +32,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      flash[:notice] = "Post updated."
       redirect_to @post
     else
+      flash[:alert] = "There is some errors."
       render 'edit'
     end
   end
@@ -39,6 +43,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:notice] = "Post deleted."
     redirect_to root_path
   end
 
@@ -50,7 +55,8 @@ class PostsController < ApplicationController
   end
 
   def is_owner
-    unless current_user == @post.user
+    unless @post.user == current_user.try
+      flash[:alert] = "That post does not belongs to you."
       redirect_to @post
     end
   end
