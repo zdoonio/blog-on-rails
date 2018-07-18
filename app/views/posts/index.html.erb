@@ -1,6 +1,8 @@
-<h1>Posts: </h1>
-<br>
-<% @posts.each do |post| %>
-  <h1 class="post"><%= link_to post.title, post_path(post) %></h1>
-  <small>Created by: <%= post.user.email %> at <%= post.created_at %></small>
-<% end %>
+<div class="content container">
+  <h1>Posts: </h1>
+  <br>
+  <% @posts.each do |post| %>
+    <h1 class="post"><%= link_to post.title, post_path(post) %></h1>
+    <small>Created by: <%= post.user.email %> at <%= post.created_at %></small>
+  <% end %>
+</div>

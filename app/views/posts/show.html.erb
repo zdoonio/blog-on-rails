@@ -1,6 +1,6 @@
 <div id="post" class="content container">
   <h1><%= @post.title %></h1>
-  <div class="post"><%= @post.body.html_safe %></div>
+  <div class="post"><%= @post.body.to_s.html_safe %></div>
   <br>
   <p>Created by: <%= @post.user.email %> at <%= @post.created_at %></p>
   <small> <%= link_to "Back", root_path %></small>
