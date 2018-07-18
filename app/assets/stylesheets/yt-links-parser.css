@@ -1,0 +1,48 @@
+.yt-links-parser-container {
+	position: relative;
+	display: inline-block;
+	overflow: hidden
+}
+
+.yt-links-parser-thumbnail {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	max-width: 100%;
+	max-height: 100%;
+	transition: .4s;
+}
+
+.yt-links-parser-container:hover .yt-links-parser-thumbnail {
+	transition: .4s;
+}
+
+.yt-links-parser-darken {
+	filter: brightness(85%);
+}
+
+.yt-links-parser-container:hover .yt-links-parser-zoom {
+	transform: scale(1.1);
+}
+
+.yt-links-parser-container:hover .yt-links-parser-darken {
+	filter: brightness(100%);
+}
+
+.yt-links-parser-play {
+	background: url('./yt_play.png') no-repeat center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+	filter: grayscale(100%);
+	transition: .4s;
+}
+
+.yt-links-parser-container:hover .yt-links-parser-play {
+	filter: grayscale(0);
+	transition: .4s;
+}
