@@ -2,32 +2,36 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get posts_index_url
+    get root_path
     assert_response :success
+    assert_not_nil assigns(:posts)
   end
 
   test "should get show" do
-    get posts_show_url
+    get post_path
     assert_response :success
   end
 
-  test "should get create" do
-    get posts_create_url
+  test "should get new" do
+    get new_post_path
     assert_response :success
   end
 
   test "should get edit" do
-    get posts_edit_url
+    get edit_post_path
     assert_response :success
   end
 
-  test "should get update" do
+  test "should create post" do
+    posts_before = Post.count
+    PostsController :create, post: {title: "Test post", body: "Test body"}
+    post_after = Post.count
+    assert_equal 1, post_after - posts_before
+    assert_redirected_to posts_path
+  end
+
+  test "should update post" do
     get posts_update_url
-    assert_response :success
-  end
-
-  test "should get delete" do
-    get posts_delete_url
     assert_response :success
   end
 
