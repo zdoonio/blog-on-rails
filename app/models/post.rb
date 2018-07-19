@@ -7,6 +7,6 @@ class Post < ApplicationRecord
   validates :body, presence: true
 
   def notify_admin
-    PostMailer.deliver_new_post_notification(self)
+    PostMailer.new_post_notification(self).deliver
   end
 end
