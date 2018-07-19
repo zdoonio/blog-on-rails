@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  #before_action :is_owner, only: [:edit, :destroy]
+  before_action :is_admin, only: [:new, :edit, :destroy]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
+
     @post = Post.new
   end
 
@@ -52,6 +53,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :user)
+  end
+
+  def is_admin
+    unless current_user.admin?
+      flash[:alert] = "You have no permissions to do that."
+    end
   end
 
   def is_owner
