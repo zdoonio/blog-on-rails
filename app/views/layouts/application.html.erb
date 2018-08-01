@@ -11,8 +11,8 @@
 
   <body>
     <div class= "container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <%= link_to "Zedd2Dev", root_path, class: 'navbar-brand'%>
+      <nav class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row">
+        <div class="navbar-brand navbar-header"><%= link_to "Zedd2Dev", root_path, class: 'navbar-brand nav navbar-header'%></div>
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item"><%= link_to "New Post", new_post_path, class: 'nav-link' %> </li>
           <% if current_user %>
