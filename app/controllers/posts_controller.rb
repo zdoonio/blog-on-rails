@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :is_admin, only: [:new, :edit, :destroy]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).order("created_at DESC")
+    else
+      @posts = Post.all.order("created_at DESC")
+    end
   end
 
   def show
@@ -51,7 +55,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :user)
+    params.require(:post).permit(:title, :body, :tag_list, :user)
   end
 
   def is_admin

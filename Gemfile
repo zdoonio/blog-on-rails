@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# Use ActsAsTaggableOn to give posts tags
+gem 'acts-as-taggable-on', '~> 6.0'
 # Use jquery for rails
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 # Use devise

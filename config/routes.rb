@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/tags/:tag', to: 'posts#index', as: :tag
   get '/contact', to: 'common#contact', as: 'contact_path'
   get '/about', to: 'common#about', as: 'about_path'
   devise_for :views
