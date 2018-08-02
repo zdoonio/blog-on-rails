@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
-
+# Use libary for images
+gem 'paperclip', '~> 6.1'
 # Use ActsAsTaggableOn to give posts tags
 gem 'acts-as-taggable-on', '~> 6.0'
 # Use jquery for rails

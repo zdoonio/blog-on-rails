@@ -1,5 +1,6 @@
 <div id="post" class="content container">
   <h1><%= @post.title %></h1>
+  <%= image_tag @post.image.url(:medium) %>
   <div class="post"><%= @post.body.to_s.html_safe %></div>
   <br>
   <p>Created by: <%= @post.user.email %> at <%= @post.created_at %></p>
