@@ -3,7 +3,7 @@
   <%= simple_form_for(@post, html: {class: "form-vertical"}) do |form| %>
     <%= form.input  :image, as: :file%>
     <%= form.input  :title %>
-    <%= form.input  :body %>
+    <%= form.input  :body, input_html: { class: 'quill_container' } %>
     <%= form.input  :tag_list, value: form.object.tag_list.to_s %>
     <%= form.button :submit %>
   <% end %>

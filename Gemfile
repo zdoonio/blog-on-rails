@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+
+# use quilljs to edit html posts
+gem 'quilljs-rails'
 # Use libary for images
 gem 'paperclip', '~> 6.1'
 # Use ActsAsTaggableOn to give posts tags
