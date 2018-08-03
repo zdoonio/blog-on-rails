@@ -11,5 +11,24 @@
     <small> <%= link_to "Edit", edit_post_path(@post) %></small>
     <small> <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" } %></small>
   <% end %>
+  <br>
+  <h2><%= @post.comments.count %> Comments</h2>
+  <div id="comments">
+    <% @post.comments.each do |comment| %>
+      <%= comment.user.email %><br>
+      <%= comment.body %><br>
+      <%= time_ago_in_words(comment.created_at) %>
+      <br>
+      <% if comment.user.id == current_user.id %>
+      <p> <%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: "Are you sure?"} %> </p>
+      <% end%>
+      <br>
+    <% end%>  
+   </div>
+  <h3>Add a comment:</h3>
+    <%= simple_form_for([@post, @post.comments.build], html: {class: "form-vertical"}) do |form| %>
+    <%= form.input  :body %>
+    <%= form.button :submit %>
+  <% end %>
   <script>jQuery('#post > div').ytLinksParseToImage();</script>
 </div>

@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   after_create :notify_admin
 
   belongs_to :user
+  has_many :comments
 
   validates :title, length: { minimum: 5}
   validates :body, presence: true
