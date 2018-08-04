@@ -1,11 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is blog server-side application writed on framework Ruby on Rails:
+## Main feauters
+* Creation posts that are html_friendly using libary Quilljs https://quilljs.com/
+* Allowed comment posts by users
+* Subscribtion of blog, emails about new posts are sended automaticlly
+* Youtube links are parsed into movie frames using libary yt-links-parser
 
-Things you may want to cover:
-
-* Ruby version
+## Ruby version
+* 
 
 * System dependencies
 
