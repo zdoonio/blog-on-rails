@@ -1,0 +1,9 @@
+<div class="content container">
+  <h1>Subscribe our blog!</h1>
+  <%= simple_form_for(@subscriber, html: {class: "form-vertical"}) do |form| %>
+    <%= form.input  :email %>
+    <%= form.button :submit %>
+  <% end %>
+
+  <small> <%= link_to "Cancel", root_path %></small>
+</div>

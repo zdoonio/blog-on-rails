@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# use libary letter opener for development testing email
+gem "letter_opener", :group => :development
 # use quilljs to edit html posts
 gem 'quilljs-rails'
 # Use libary for images

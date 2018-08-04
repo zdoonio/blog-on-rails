@@ -12,6 +12,10 @@ class Post < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def notify_admin
-    PostMailer.new_post_notification(self).deliver
+    @subscribers = Subscriber.all
+
+    @subscribers.each do |subscriber|
+      PostMailer.new_post_notification(self, subscriber.email).deliver
+    end  
   end
 end

@@ -5,10 +5,10 @@ class PostMailer < ApplicationMailer
   #
   #   en.post_mailer.new_post_notification.subject
   #
-  def new_post_notification(post)
+  def new_post_notification(post, email)
     @post = post
 
 
-    mail to: "to@example.org"
+    mail to: email, subject: "WOW! New post on our blog!", from: "admin@blog.com"
   end
 end
