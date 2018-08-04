@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :is_admin, only: [:new, :edit, :destroy]
 
+  helper PostsHelper
+
   def index
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).order("created_at DESC")
