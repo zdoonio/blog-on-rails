@@ -16,7 +16,11 @@
       <nav class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row">
         <div class="navbar-brand navbar-header"><%= link_to "Zedd2Dev", root_path, class: 'navbar-brand nav navbar-header'%></div>
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item"><%= link_to "New Post", new_post_path, class: 'nav-link' %> </li>
+          <% if current_user != nil %>
+            <% if current_user.admin %>
+              <li class="nav-item"><%= link_to "New Post", new_post_path, class: 'nav-link' %> </li>
+            <% end %>
+          <% end %>  
           <% if current_user %>
           <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'nav-link' %> </li>
           <% else %>

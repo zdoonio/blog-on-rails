@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :is_admin, only: [:new, :edit, :destroy]
+  before_action :is_admin, only: [:new, :ceate, :edit, :update, :destroy]
+  after_action :is_admin, only: [:new, :ceate, :edit, :update, :destroy]
 
   helper PostsHelper
 
@@ -63,6 +64,7 @@ class PostsController < ApplicationController
   def is_admin
     unless current_user.admin?
       flash[:alert] = "You have no permissions to do that."
+      redirect_to root_path
     end
   end
 
