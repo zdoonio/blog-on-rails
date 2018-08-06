@@ -2,9 +2,15 @@
   <h1>Posts: </h1>
   <br>
   <% @posts.each do |post| %>
-    <h1 class="post"><%= link_to post.title, post_path(post) %></h1>
-    <%= image_tag post.image.url(:thumb) %>
-    <p> Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %> </p>
-    <small>Created by: <%= post.user.email %> at <%= post.created_at %></small>
+      <div class="row">
+        <blockquote class="col-md-6 col-md-offset-4">
+          <h1 class="post"><%= link_to post.title, post_path(post) %></h1>
+          <%= image_tag post.image.url(:thumb) %>
+          <p> Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %> </p>
+          <small>Created by: <%= post.user.email %> at <%= post.created_at %></small>
+        </blockquote>
+      </div>
   <% end %>
+
+  <%= paginate @posts, outer_window: 3%>
 </div>
