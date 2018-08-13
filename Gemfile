@@ -14,13 +14,13 @@ gem 'paperclip', '~> 6.1'
 # Use ActsAsTaggableOn to give posts tags
 gem 'acts-as-taggable-on', '~> 6.0'
 # Use jquery for rails
-gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'jquery-rails'
 # Use devise
 gem 'devise'
 # Use simple forms
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
-# Use TwitterBootstrap
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+# Use bootstrap 4 gem
+gem 'bootstrap', '~> 4.1.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
