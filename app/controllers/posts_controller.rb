@@ -29,7 +29,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       flash[:alert] = "There is some errors."
-      render 'create'
+      render 'new'
     end
   end
 
