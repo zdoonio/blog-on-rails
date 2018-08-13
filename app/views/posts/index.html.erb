@@ -11,8 +11,7 @@
         </blockquote>
       </div>
   <% end %>
-
-  <% if !@tag %>
-  <%= paginate @posts, outer_window: 3%>
+  <% if @pagination%>
+    <%= paginate @posts, outer_window: 3%>
   <% end %>
 </div>
