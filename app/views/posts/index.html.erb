@@ -12,7 +12,7 @@
       </div>
   <% end %>
 
-  <% if !tag %>
+  <% if !@tag %>
   <%= paginate @posts, outer_window: 3%>
   <% end %>
 </div>
